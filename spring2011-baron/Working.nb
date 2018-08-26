@@ -1,0 +1,153 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      4116,        143]
+NotebookOptionsPosition[      3792,        127]
+NotebookOutlinePosition[      4131,        142]
+CellTagsIndexPosition[      4088,        139]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Choose", "[", 
+    RowBox[{"n_", ",", "r_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{"n", "!"}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "-", "r"}], ")"}], "!"}], 
+     RowBox[{"r", "!"}]}]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Candidates", "[", "n_", "]"}], ":=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Choose", "[", 
+       RowBox[{"n", ",", "r"}], "]"}], 
+      RowBox[{"Choose", "[", 
+       RowBox[{"n", ",", 
+        RowBox[{"n", "-", "r"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "n", ",", "2"}], "}"}]}], "]"}]}], ";", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", 
+       RowBox[{"Sols", "[", "n", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "2", ",", "50"}], "}"}]}], "]"}], "//", 
+   "TableForm"}]}]}], "Input",
+ CellChangeTimes->{{3.529306465847125*^9, 3.529306530933072*^9}, {
+  3.52930660821695*^9, 3.529306636935523*^9}, {3.529306687759244*^9, 
+  3.529306774455818*^9}, {3.529307605764496*^9, 3.529307624609378*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "2"},
+    {"3", "10"},
+    {"4", "38"},
+    {"5", "126"},
+    {"6", "452"},
+    {"7", "1716"},
+    {"8", "6470"},
+    {"9", "24310"},
+    {"10", "92252"},
+    {"11", "352716"},
+    {"12", "1352540"},
+    {"13", "5200300"},
+    {"14", "20056584"},
+    {"15", "77558760"},
+    {"16", "300546630"},
+    {"17", "1166803110"},
+    {"18", "4537543340"},
+    {"19", "17672631900"},
+    {"20", "68923356788"},
+    {"21", "269128937220"},
+    {"22", "1052049129144"},
+    {"23", "4116715363800"},
+    {"24", "16123803193628"},
+    {"25", "63205303218876"},
+    {"26", "247959261273752"},
+    {"27", "973469712824056"},
+    {"28", "3824345320438520"},
+    {"29", "15033633249770520"},
+    {"30", "59132290704871952"},
+    {"31", "232714176627630544"},
+    {"32", "916312070771835462"},
+    {"33", "3609714217008132870"},
+    {"34", "14226520736453485260"},
+    {"35", "56093138908331422716"},
+    {"36", "221256270142955957252"},
+    {"37", "873065282167813104916"},
+    {"38", "3446310324328958045400"},
+    {"39", "13608507434599516007800"},
+    {"40", "53753604366737011495220"},
+    {"41", "212392290424395860814420"},
+    {"42", "839455243105676416186440"},
+    {"43", "3318776542511877736535400"},
+    {"44", "13124252690843477643962760"},
+    {"45", "51913710643776705684835560"},
+    {"46", "205397724721025457950724720"},
+    {"47", "812850570172585125274307760"},
+    {"48", "3217533506933165578012643100"},
+    {"49", "12738806129490428451365214300"},
+    {"50", "50445672272782033462103029752"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.5293076280444393`*^9}]
+}, Open  ]]
+},
+WindowSize->{807, 1173},
+WindowMargins->{{Automatic, -936}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (November 11, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1168, 36, 100, "Input"],
+Cell[1738, 60, 2038, 64, 811, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
