@@ -15,6 +15,9 @@ def read_pairs(instream):
 def rename(a, b):
   return '(' + a[1] + b[1] + ')'
 
+def merge_tree(ltree, rtree):
+  return [ltree, rtree]
+
 # Huffman Tree ================================================================
 def huffman_tree(items, combine = rename):
   heapq.heapify(items)
@@ -68,6 +71,31 @@ class graph_tree:
     self.prologue(data)
     huffman_tree(data, self.draw_link)
     self.epilogue()
+
+# Expected value output =======================================================
+def expected_length(data):
+  final_tree = huffman_tree(data, merge_tree)
+
+  def show_value(final_node, prefix):
+    count, name = final_node
+    print "%s:%d:%s" % (name, count, prefix)
+
+  def show_tree(final_tree, prefix='', output=show_value):
+    count, name = final_tree
+
+    if name.__class__ is list:
+      lside = show_tree(name[0], prefix+'0')
+      rside = show_tree(name[1], prefix+'1')
+
+      return lside + rside
+    else:
+      output(final_tree, prefix)
+      return count * len(prefix)
+
+  weighted_length = show_tree(final_tree, '', show_value)
+  total_count, _ = final_tree
+
+  print "E[length(X)] = %f" % (1.0 * weighted_length / total_count)
 
 # Main ========================================================================
 if __name__ == '__main__':
