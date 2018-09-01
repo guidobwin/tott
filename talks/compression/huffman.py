@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import argparse
 import heapq
 import sys
 
@@ -98,9 +99,20 @@ def expected_length(data):
   print "E[length(X)] = %f" % (1.0 * weighted_length / total_count)
 
 # Main ========================================================================
+parser = argparse.ArgumentParser(description="Huffman tree utilities")
+
+parser.add_argument('--graph', '-g',
+  help="Generate the graph in a form ready for graphviz",
+  action='store_true'
+)
+
 if __name__ == '__main__':
+  args = parser.parse_args()
+
   raw = read_pairs(sys.stdin)
 
-  gt = graph_tree()
-
-  gt.treeify(raw)
+  if args.graph:
+    gt = graph_tree()
+    gt.treeify(raw)
+  else:
+    expected_length(raw)
